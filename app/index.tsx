@@ -27,10 +27,12 @@ export default function App() {
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
+        tabBarActiveTintColor: 'black',
+        tabBarInactiveTintColor: 'gray',
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Control" component={ControlScreen} />
+      <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false}} />
+      <Tab.Screen name="Control" component={ControlScreen} options={{ headerTitle: 'Change Display'}} />
       <Tab.Screen name="Add" component={AddScreen} />
     </Tab.Navigator>
   );
