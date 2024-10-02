@@ -1,5 +1,5 @@
-export const GifSelectedHandler = () => {
-    // This function will handle the selected gif
-    // and will display it on matrix
+import TouchabelOpacity from 'react-native';
+
+export const ShortHandler = () => {
     console.log("Gif Selected");
 }
