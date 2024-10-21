@@ -16,6 +16,12 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "scheme": "blinkster"
+    "scheme": "blinkster",
+    "android": {
+      "package": "com.anonymous.Blinkster"
+    },
+    "ios": {
+      "bundleIdentifier": "com.anonymous.Blinkster"
+    }
   }
 }
