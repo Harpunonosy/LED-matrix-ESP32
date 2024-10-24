@@ -13,12 +13,13 @@ const HomeScreen = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ 
-          login: login, //change this to ssid 3==================D
+          ssid: login, //change this to ssid 3==================D
           password: password,
         }),
       });
 
       const data = await response.json();
+      console.log(data);
       Alert.alert('Status', data.status || 'Wysłano dane');
     } catch (error) {
       console.error(error);
