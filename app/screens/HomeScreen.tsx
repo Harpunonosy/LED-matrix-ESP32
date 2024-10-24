@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, Alert } from 'react-native';
+import { View, TextInput, Button, Alert, ToastAndroid } from 'react-native';
 
 const HomeScreen = () => {
   const [login, setLogin] = useState('');
@@ -12,8 +12,8 @@ const HomeScreen = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          login: login,
+        body: JSON.stringify({ 
+          login: login, //change this to ssid 3==================D
           password: password,
         }),
       });
