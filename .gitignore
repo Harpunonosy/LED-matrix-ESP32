@@ -128,3 +128,5 @@ docs/pages/versions/*/react-native/*.diff
 
 # iOS
 **/ios/.xcode.env.local
+node_modules
+node_modules

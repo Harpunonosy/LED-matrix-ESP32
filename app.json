@@ -22,6 +22,14 @@
     },
     "ios": {
       "bundleIdentifier": "com.anonymous.Blinkster"
+    },
+    "plugins": [
+      "expo-dev-client"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "62a7bbbc-2029-499e-9629-6b44958b4b1c"
+      }
     }
   }
 }
