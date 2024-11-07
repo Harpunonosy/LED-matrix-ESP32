@@ -1,29 +1,16 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, Alert, ToastAndroid } from 'react-native';
+import { View, TextInput, Button } from 'react-native';
+import { sendDataToESP32 } from '../services/ESP32Service';
 
 const HomeScreen = () => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
 
-  const sendData = async () => {
+  const handleSendData = async () => {
     try {
-      const response = await fetch('http://192.168.4.1/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ 
-          ssid: login, //change this to ssid 3==================D
-          password: password,
-        }),
-      });
-
-      const data = await response.json();
-      console.log(data);
-      Alert.alert('Status', data.status || 'Wysłano dane');
+      await sendDataToESP32(login, password);
     } catch (error) {
       console.error(error);
-      Alert.alert('Błąd', 'Nie udało się wysłać danych');
     }
   };
 
@@ -33,16 +20,14 @@ const HomeScreen = () => {
         placeholder="Login"
         value={login}
         onChangeText={setLogin}
-        style={{ borderWidth: 1, marginBottom: 10, padding: 10 }}
       />
       <TextInput
-        placeholder="Hasło"
+        placeholder="Password"
         value={password}
         onChangeText={setPassword}
         secureTextEntry
-        style={{ borderWidth: 1, marginBottom: 10, padding: 10 }}
       />
-      <Button title="Wyślij" onPress={sendData} />
+      <Button title="Send Data" onPress={handleSendData} />
     </View>
   );
 };

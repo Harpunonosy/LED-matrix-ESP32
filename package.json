@@ -21,7 +21,7 @@
     "expo-status-bar": "~1.12.1",
     "glob": "^9.3.5",
     "qs": "^6.13.0",
-    "react": "18.2.0",
+    "react": "^18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.74.5",
     "react-native-gesture-handler": "~2.16.1",
